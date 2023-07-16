@@ -1,0 +1,284 @@
+﻿<Window x:Class="PRS_GROUP.Views.PatientMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRS_GROUP.ViewModels"
+        xmlns:iconPacks="clr-namespace:MahApps.Metro.IconPacks;assembly=MahApps.Metro.IconPacks.Material"
+        mc:Ignorable="d"
+        Title="PatientMenu" Height="550" Width="1000"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+    <Window.DataContext>
+        <local:PatientMenuVM/>
+    </Window.DataContext>
+    <Border CornerRadius="30">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/download.jpg"/>
+        </Border.Background>
+
+        <Border Opacity="0.8" CornerRadius="30" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border CornerRadius="30,0,0,30"
+                                     Grid.Column="0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0 0"
+                                     EndPoint="1 1">
+                            <GradientStop Color="#3aa9ad" Offset="0"/>
+                            <GradientStop Color="#283593" Offset="0.2"/>
+                            <GradientStop Color="#1A237E" Offset="0.9"/>
+                            <GradientStop Color="#3aa9ad" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                
+                            </Grid.RowDefinitions>
+
+                            
+
+                            <TextBlock Text="Patients Details "
+                                           Foreground="Wheat"
+                                           FontSize="15"
+                                           FontWeight="Bold"
+                                           FontFamily="Montserrat" 
+                                           Grid.Row="0"
+                                           HorizontalAlignment="center"
+                                           Margin="0,40,0,0"/>
+
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition />
+
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="60" />
+                                        <RowDefinition/>
+
+                                    </Grid.RowDefinitions>
+                                    <TextBox Text="{Binding PfindNICs,UpdateSourceTrigger=PropertyChanged}" Grid.Row="0"  x:Name="FindNIC"  FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                CaretBrush="white" BorderBrush="white" BorderThickness="2" Width="200" Height="30" HorizontalAlignment="left" Margin="20,18,0,0"
+                                                                VerticalContentAlignment="Bottom" />
+                                    <TextBlock  Grid.Row="1" Text="Enter the Patient NIC to find" Foreground="DarkGray" FontSize="9"   FontFamily="Montserrat"  Margin="20,0,0,0"/>
+
+                                </Grid>
+
+                                <Grid Grid.Column="1">
+                                    <Button Content="Find" Style="{StaticResource FindButton}" Command="{Binding  PfindCommand,UpdateSourceTrigger=PropertyChanged}" Margin="0,18,22,20" />
+
+
+                                </Grid>
+                            
+
+                            
+                            </Grid>
+
+                        </Grid>
+
+
+
+                        <StackPanel Orientation="Vertical" Margin="15" Grid.Row="1">
+                          
+
+                            <Grid x:Name="AddPatient">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0"  Text="NIC" Foreground="white" FontSize="12"   FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <TextBox Text="{Binding PNICs,UpdateSourceTrigger=PropertyChanged}"  x:Name="PNIC" Grid.Row="0" Grid.Column="1" FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Width="200"  HorizontalAlignment="left" Margin="0"
+                                                                VerticalContentAlignment="Bottom"    />
+
+
+                                <TextBlock Grid.Row="1" Grid.Column="0"  Text="First Name" Foreground="white" FontSize="12"  FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <TextBox Text="{Binding PFNames,UpdateSourceTrigger=PropertyChanged}" x:Name="PFirstName" Grid.Row="1" Grid.Column="1" FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                    CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Width="200"  HorizontalAlignment="left" Margin="0"
+                                                                    VerticalContentAlignment="Bottom" />
+
+                                <TextBlock Grid.Row="2" Grid.Column="0"  Text="Last Name" Foreground="white" FontSize="12"  FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <TextBox Text="{Binding PLNames,UpdateSourceTrigger=PropertyChanged}" x:Name="PLastName" Grid.Row="2" Grid.Column="1" FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                    CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Width="200"  HorizontalAlignment="left" Margin="0"
+                                                                    VerticalContentAlignment="Bottom" />
+
+                                <TextBlock Grid.Row="3" Grid.Column="0"  Text="Address" Foreground="white" FontSize="12"  FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <TextBox Text="{Binding PAdd,UpdateSourceTrigger=PropertyChanged}" x:Name="PAddress" Grid.Row="3" Grid.Column="1" FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                    CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Width="200"  HorizontalAlignment="left" Margin="0"
+                                                                    VerticalContentAlignment="Bottom" />
+
+                                <TextBlock Grid.Row="4" Grid.Column="0"  Text="Contact Number" Foreground="white" FontSize="12"   FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <TextBox  Text="{Binding PNo,UpdateSourceTrigger=PropertyChanged}" x:Name="PTNumber" Grid.Row="4" Grid.Column="1" FontSize="12" FontWeight="Medium" Background="Transparent" FontFamily="Montserrat"  Foreground="White"
+                                                                    CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Width="200"  HorizontalAlignment="left" Margin="0"
+                                                                    VerticalContentAlignment="Bottom" />
+
+                                <TextBlock Grid.Row="5" Grid.Column="0"  Text="Registration Date" Foreground="white" FontSize="12"   FontFamily="Montserrat"  Margin="0,35,0,0"/>
+
+
+                                <DatePicker IsTodayHighlighted="True" SelectedDate="{Binding PDate,UpdateSourceTrigger=PropertyChanged,StringFormat=dd.MM.yyyy}" x:Name="RDate" Grid.Row="5" Grid.Column="1" BorderBrush="Transparent" 
+                                                                    Width="200"  HorizontalAlignment="left" VerticalContentAlignment="Bottom" />
+
+
+
+
+                            </Grid>
+
+
+
+                        </StackPanel>
+                        
+
+
+                    </Grid>
+
+                </Border>
+
+                <Border Background="White" CornerRadius="0 30 30 0" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="70"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/medicare logo.png" 
+                                        Width="140" Height="70" Margin="0"/>
+
+                            <TextBlock Text="PATIENTS DETAILS"
+                               Foreground="#1A237E"
+                               FontSize="25"
+                               FontFamily="Montserrat"
+                               FontWeight="bold"
+                               Grid.Column="1"
+                               VerticalAlignment="Center"
+                               Margin="20,40,0,0"/>
+
+                            <Button x:Name="back"
+                            Background="#1A237E"                                                     
+                            Grid.Column="2"
+                            Margin="0,0,0,20"
+                            Command="{Binding back_to_mainfrompatientCommand,UpdateSourceTrigger=PropertyChanged}"
+                            Style="{StaticResource Minimize_close}">
+                                <iconPacks:PackIconMaterial Kind="ArrowBottomLeft"                                                    
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center" 
+                                                    Foreground="white"/>
+                            </Button>
+
+                            <Button x:Name="close"
+                            Background="#1A237E"                                                      
+                            Grid.Column="3"
+                            Margin="0,0,0,20"
+                            Click="close_Click_1"
+                            Style="{StaticResource Minimize_close}">
+                                <iconPacks:PackIconMaterial Kind="Close"                                                    
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center" 
+                                                    Foreground="white"/>
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Row="1" Margin="10">
+
+                            <DataGrid IsHitTestVisible="True" AutoGenerateColumns="False" Margin="10" Name="PatientDG"  IsReadOnly="True" HorizontalAlignment="Center" BorderBrush="#1A237E" BorderThickness="2" 
+                                        ItemsSource="{Binding DatabasePatients,UpdateSourceTrigger=PropertyChanged}" >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="NIC"  Binding="{Binding PNIC}" Width="100"/>
+                                    <DataGridTextColumn Header="First Name" Binding="{Binding PatientFirstName}" Width="100"/>
+                                    <DataGridTextColumn Header="Last Name" Binding="{Binding PatientLastName}" Width="100" />
+                                    <DataGridTextColumn Header="Address" Binding="{Binding Address}" Width="137"/>
+                                    <DataGridTextColumn Header="Contact Number" Binding="{Binding T_Number}" Width="100" />
+                                    <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="63" />
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                        </Grid>
+
+                        <Grid Grid.Row="2" x:Name="EditOparetion">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Grid.Column="0"  Content="Create" Style="{StaticResource CRUD}" Margin="0,5,0,5"  Command="{Binding  PcreateCommand,UpdateSourceTrigger=PropertyChanged}"/>
+
+                            <Button Grid.Column="2"  Content="Update" Style="{StaticResource CRUD}" Margin="0,5,0,5" Command="{Binding PUpdateCommand,UpdateSourceTrigger=PropertyChanged}"/>
+
+                            <Button Grid.Column="1"  Content="Delete" Style="{StaticResource CRUD}" Margin="0,5,0,5"  Command="{Binding PDeleteCommand,UpdateSourceTrigger=PropertyChanged}" />
+
+                            <Button Grid.Column="3"  Content="Check Bill Amount" Style="{StaticResource CRUD}" Command="{Binding CreatebillCommand,UpdateSourceTrigger=PropertyChanged}"  Width="150"/>
+
+                        </Grid>
+
+                    </Grid>
+
+
+                </Border>
+
+
+            </Grid>
+        </Border>
+
+
+
+    </Border>
+</Window>
+
+
+

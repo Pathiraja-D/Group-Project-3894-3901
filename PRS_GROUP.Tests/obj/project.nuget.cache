@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "sGxlmMmDQLKgUlP2iByPMc1WNvIMruswKLmAnSnvbsASJo7V8x27Ut2WjGhAYot52ZkBg67A8udCupxLkUXtww==",
+  "success": false,
+  "projectFilePath": "D:\\GUI\\PRS_GROUP\\PRS_GROUP (2)\\PRS_GROUP\\PRS_GROUP.Tests\\PRS_GROUP.Tests.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PRS_GROUP is not compatible with net7.0 (.NETCoreApp,Version=v7.0). Project PRS_GROUP supports: net7.0-windows7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "PRS_GROUP",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}

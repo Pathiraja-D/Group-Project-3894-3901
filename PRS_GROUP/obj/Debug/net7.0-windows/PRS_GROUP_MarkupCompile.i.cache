@@ -1,0 +1,20 @@
+﻿PRS_GROUP
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\GUI\PRS_GROUP\PRS_GROUP (2)\PRS_GROUP\PRS_GROUP\obj\Debug\net7.0-windows\
+PRS_GROUP
+none
+false
+TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+D:\GUI\PRS_GROUP\PRS_GROUP (2)\PRS_GROUP\PRS_GROUP\App.xaml
+5-2072293630
+
+23-74126959
+251-1640759074
+MainWindow.xaml;Views\AdminMenu.xaml;Views\BillAmount.xaml;Views\PatientMenu.xaml;Views\UserMenu.xaml;
+
+True
+
